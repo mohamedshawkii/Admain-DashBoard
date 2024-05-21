@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SideBare from '../sidebar/SideBare'
 
 function Navigation() {
+  const [toggle, setToggle] = useState(false);
+  
+  useEffect(() => {
+    function paddingLeft() {
+      document.body.style.paddingLeft = "300px";
+    //   if (toggle) {
+    //     document.body.style.paddingLeft = "28rem";
+    //   } else {
+    //     document.body.style.paddingLeft = "8rem";
+    //   }
+    }
+    paddingLeft();
+  }, [toggle]);
+
   return (
-    <div>
-        <SideBare/>
+    <div>  
+        <SideBare toggle={toggle} setToggle={setToggle} />
     </div>
   )
 }
