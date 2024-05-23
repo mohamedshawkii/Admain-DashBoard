@@ -2,14 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Navigation from "./components/navigation/Navigation.jsx";
-import Dashboard from "./components/allpages/dashboard/Dashboard.jsx";
-import Features from "./components/allpages/features/Features.jsx";
-import Users from "./components/allpages/users/Users.jsx";
-import Pricing from "./components/allpages/pricing/Pricing.jsx";
-import Integrations from "./components/allpages/integrations/Integrations.jsx";
-import Settings from "./components/allpages/settings/Settings.jsx";
-import TemplatePages from "./components/allpages/templatepages/TemplatePages.jsx";
+import Navigation from "./components/navigation/index.jsx";
+import Dashboard from "./components/allpages/dashboard/index.jsx";
+import Settings from "./components/allpages/settings/index.jsx";
+import TemplatePages from "./components/allpages/templatepages/index.jsx";
+
+import MapChartPage from "./components/allpages/mapchartpage/index.jsx"
+import CoordinatesPage from "./components/allpages/coordinatespage/index.jsx"
+import CalenderChartPage from "./components/allpages/calenderchartpage/index.jsx"
+import PieChartPage from "./components/allpages/piechartpage/index.jsx"
+import TeamDataGrid from "./components/allpages/teamdatagrid/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,31 +19,35 @@ const router = createBrowserRouter([
     element: <Navigation />,
     children: [
       {
-        path: "/Dashboard",
+        path: "/Dashboard/:PageName",
         element: <Dashboard />,
       },
       {
-        path: "/Features",
-        element: <Features />,
+        path: "/Map Chart/:PageName",
+        element: <MapChartPage />,
       },
       {
-        path: "/Users",
-        element: <Users />,
+        path: "/Parallel Coordinates/:PageName",
+        element: <CoordinatesPage />,
       },
       {
-        path: "/Pricing",
-        element: <Pricing />,
+        path: "/Calender Chart/:PageName",
+        element: <CalenderChartPage />,
       },
       {
-        path: "/Integrations",
-        element: <Integrations />,
+        path: "/Pie Chart/:PageName",
+        element: <PieChartPage />,
       },
       {
-        path: "/Settings",
+        path: "/Team/:PageName",
+        element: <TeamDataGrid />,
+      },
+      {
+        path: "/Settings/:PageName",
         element: <Settings />,
       },
       {
-        path: "/Template pages",
+        path: "/Template pages/:PageName",
         element: <TemplatePages />,
       },
     ],

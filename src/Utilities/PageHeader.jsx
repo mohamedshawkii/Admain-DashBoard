@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
 
-function PageHeader() {
+function PageHeader({ pageTitle }) {
   return (
-    <div>PageHeader</div>
-  )
+    <div
+      className=" 
+      flex flex-row justify-start
+      items-center gap-3 h-16 w-full
+      bg-none px-12 py-12 text-center text-3xl font-extrabold"
+    >
+      {pageTitle}
+      
+    </div>
+  );
 }
 
-export default PageHeader
+export default PageHeader;

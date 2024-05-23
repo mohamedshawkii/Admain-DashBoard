@@ -1,10 +1,4 @@
 import React, { useState } from "react";
-import { RiHomeFill } from "react-icons/ri";
-import { IoExtensionPuzzle } from "react-icons/io5";
-import { FaDollarSign } from "react-icons/fa";
-import { FaStar } from "react-icons/fa6";
-import { FaUser } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
 import ProfileImage from '../../assets/profileImg.png'
 import {
   IoIosArrowForward,
@@ -15,30 +9,39 @@ import Logo from "../../assets/Logo.png";
 import { ImSearch } from "react-icons/im";
 import { HiTemplate } from "react-icons/hi";
 import BtnSection from "./RenderSection/BtnSection";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { TbChartDots3 } from "react-icons/tb";
+import { TbChartGridDotsFilled } from "react-icons/tb";
+import { BiSolidDoughnutChart } from "react-icons/bi";
+import { RiDashboardHorizontalFill } from "react-icons/ri";
+import { BsUiChecksGrid } from "react-icons/bs";
 
 function SideBare({toggle,setToggle}) {
   const FirstSection = [
     {
       name: "Dashboard",
-      icon: <RiHomeFill />,
+      icon: <RiDashboardHorizontalFill />,
     },
     {
-      name: "Features",
-      icon: <FaStar />,
+      name: "Map Chart",
+      icon: <FaMapMarkerAlt/>,
     },
     {
-      name: "Users",
-      icon: <FaUser />,
+      name: "Parallel Coordinates",
+      icon: <TbChartDots3 />,
     },
     {
-      name: "Pricing",
-      icon: <FaDollarSign />,
+      name: "Calender Chart",
+      icon: <TbChartGridDotsFilled />,
     },
-    {
-      name: "Integrations",
-      icon: <IoExtensionPuzzle />,
+    { name: "Pie Chart",
+      icon: <BiSolidDoughnutChart />,
+    },
+    { name: "Team",
+      icon: <BsUiChecksGrid />,
     },
   ];
+     
   const SubPages = [
     {
       name: "All pages",
@@ -77,7 +80,7 @@ function SideBare({toggle,setToggle}) {
 
   return (
     <aside>
-      <div className=" w-[300px] h-svh overflow-scroll bg-[#081028] border-1 border-[#7E89AC] fixed top-0 left-0">
+      <div className=" w-[300px] h-svh overflow-scroll bg-[#081028] fixed top-0 left-0">
         <div className="flex flex-col justify-start items-center gap-6  w-full h-auto p-6">
           <div className="flex flex-row justify-start items-center w-full h-auto">
             <img src={Logo} alt="" />
@@ -88,11 +91,14 @@ function SideBare({toggle,setToggle}) {
           </div>
           <div>
             <form
-              className="flex flex-row justify-between items-center gap-8 py-2 px-4 rounded-lg bg-[#ffffff]"
+              className="flex flex-row justify-between items-center gap-8 py-2 px-4 rounded
+               border-[1px] border-[#343B4F] bg-[#0B1739]"
               onSubmit={handleSubmit}
             >
               <input
-                className="border-none rounded-sm box-border outline-none"
+                className="border-none rounded box-border outline-none bg-[#0B1739]
+                shadow appearance-none border w-full py-2 px-3 border-[#7E89AC]
+                text-[#7E89AC] leading-tight focus:outline-none focus:shadow-outline"
                 value={formSubmit}
                 type="text"
                 placeholder="Search for..."
