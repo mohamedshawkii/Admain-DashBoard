@@ -12,6 +12,7 @@ import CoordinatesPage from "./components/allpages/coordinatespage/index.jsx"
 import CalenderChartPage from "./components/allpages/calenderchartpage/index.jsx"
 import PieChartPage from "./components/allpages/piechartpage/index.jsx"
 import TeamDataGrid from "./components/allpages/teamdatagrid/index.jsx";
+import ScheduleCalender from "./components/allpages/schedulecalender/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
         element: <CoordinatesPage />,
       },
       {
-        path: "/Calender Chart/:PageName",
+        path: "/pin Data/:PageName",
         element: <CalenderChartPage />,
       },
       {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/Team/:PageName",
         element: <TeamDataGrid />,
+      },
+      {
+        path: "/Calender/:PageName",
+        element: <ScheduleCalender />,
       },
       {
         path: "/Settings/:PageName",
