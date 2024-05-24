@@ -5,7 +5,6 @@ import PageHeader from "../../../Utilities/PageHeader";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 import { IoIosCheckbox } from "react-icons/io";
-
 function TeamDataGrid() {
   const columns = [
     { field: "id", headerName: "ID" },
