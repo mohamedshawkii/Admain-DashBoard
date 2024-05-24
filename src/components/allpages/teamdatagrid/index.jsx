@@ -4,7 +4,7 @@ import { mockDataTeam } from "../../../data/ChartsData";
 import PageHeader from "../../../Utilities/PageHeader";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
-
+import { IoIosCheckbox } from "react-icons/io";
 function TeamDataGrid() {
   const columns = [
     { field: "id", headerName: "ID" },
@@ -93,7 +93,7 @@ function TeamDataGrid() {
             backgroundColor: "#0B1739",
           },
           "& .MuiSvgIcon-root": {
-            color: "#AEB9E1",
+            color: "#0B1739",
           },
           "& .MuiDataGrid-filler": {
             backgroundColor: "#0B1739",
@@ -108,16 +108,27 @@ function TeamDataGrid() {
             backgroundColor: "#0B1739",
           },
           "& .MuiDataGrid-footerContainer": {
+            color: "#0B1739",
             borderTop: "none",
-            backgroundColor: "#0E43FB",
+            backgroundColor: "#AEB9E1",
+          },
+          "& .MuiTablePagination-toolbar": {
+            color: "#0B1739",
+          },
+          "& .MuiCheckbox-colorPrimary": {
+            color: "#AEB9E1",
           },
           "& .MuiCheckbox-root": {
-            color: "#CB3CFF",
+            color: "#AEB9E1",
+            // backgroundColor: "#AEB9E1",
           },
+          
         }}
       >
         <DataGrid
-          style={{ color: "#AEB9E1 " }}
+          component = {{color: "#AEB9E1",}}
+          style={{ color: "#AEB9E1" }}
+          checkboxSelection
           rows={mockDataTeam}
           columns={columns}
         />

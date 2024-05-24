@@ -103,7 +103,7 @@ body{
 }
 ::-webkit-scrollbar-corner{
   background: none;
-}
+}              
 ::-webkit-scrollbar-track {
   background: none;
   border-radius: 100vw;

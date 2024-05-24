@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProfileImage from '../../assets/profileImg.png'
+import ProfileImage from "../../assets/profileImg.png";
 import {
   IoIosArrowForward,
   IoIosArrowBack,
@@ -15,8 +15,9 @@ import { TbChartGridDotsFilled } from "react-icons/tb";
 import { BiSolidDoughnutChart } from "react-icons/bi";
 import { RiDashboardHorizontalFill } from "react-icons/ri";
 import { BsUiChecksGrid } from "react-icons/bs";
+import { SlCalender } from "react-icons/sl";
 
-function SideBare({toggle,setToggle}) {
+function SideBare({ toggle, setToggle }) {
   const FirstSection = [
     {
       name: "Dashboard",
@@ -24,37 +25,19 @@ function SideBare({toggle,setToggle}) {
     },
     {
       name: "Map Chart",
-      icon: <FaMapMarkerAlt/>,
+      icon: <FaMapMarkerAlt />,
     },
     {
       name: "Parallel Coordinates",
       icon: <TbChartDots3 />,
     },
     {
-      name: "Calender Chart",
+      name: "pin Data",
       icon: <TbChartGridDotsFilled />,
     },
-    { name: "Pie Chart",
-      icon: <BiSolidDoughnutChart />,
-    },
-    { name: "Team",
-      icon: <BsUiChecksGrid />,
-    },
-  ];
-     
-  const SubPages = [
-    {
-      name: "All pages",
-    },
-    {
-      name: "Reports",
-    },
-    {
-      name: "Products",
-    },
-    {
-      name: "Task",
-    },
+    { name: "Pie Chart", icon: <BiSolidDoughnutChart /> },
+    { name: "Team", icon: <BsUiChecksGrid /> },
+    { name: "Calender", icon: <SlCalender /> },
   ];
 
   const SecondSection = [
@@ -68,9 +51,7 @@ function SideBare({toggle,setToggle}) {
     },
   ];
 
-  
   const [selectedBtn, setSelectedBtn] = useState("");
-  const [selectedPage, setSelectedPage] = useState("");
   const [formSubmit, setFormSubmit] = useState("");
 
   const handleSubmit = (e) => {
@@ -111,25 +92,19 @@ function SideBare({toggle,setToggle}) {
           </div>
           <BtnSection
             BtnObject={FirstSection}
-            SubPages={SubPages}
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
             selectedBtn={selectedBtn}
             setSelectedBtn={setSelectedBtn}
-            toggle={toggle} 
+            toggle={toggle}
             setToggle={setToggle}
           />
         </div>
-        <hr className="border-1 border-[#7E89AC] rounded-3xl"/>
+        <hr className="border-1 border-[#7E89AC] rounded-3xl" />
         <div className="flex flex-col justify-start items-center  gap-6 w-full h-auto p-6">
           <BtnSection
             BtnObject={SecondSection}
-            SubPages={SubPages}
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
             selectedBtn={selectedBtn}
             setSelectedBtn={setSelectedBtn}
-            toggle={toggle} 
+            toggle={toggle}
             setToggle={setToggle}
           />
           <div className="flex flex-row justify-start items-center gap-3 w-full h-auto">
@@ -139,7 +114,7 @@ function SideBare({toggle,setToggle}) {
               <p>Account settings</p>
             </div>
             <div className="ml-auto">
-              <IoIosArrowForward/>
+              <IoIosArrowForward />
             </div>
           </div>
         </div>
