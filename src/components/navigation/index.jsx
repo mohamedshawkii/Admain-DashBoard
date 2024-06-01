@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import SideBare from "../sidebar/SideBare";
 import { Outlet } from "react-router-dom";
+import SideBare from "../sidebar";
 
 function Navigation() {
   const [toggle, setToggle] = useState(false);

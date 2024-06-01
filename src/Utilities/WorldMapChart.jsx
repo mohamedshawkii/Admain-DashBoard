@@ -1,13 +1,13 @@
 import React from "react";
 import { ResponsiveChoropleth } from "@nivo/geo";
 import { DataMapChart as data} from "../data/ChartsData";
-import { FeatureMapChart as Feature} from "../data/ChartsData";
+import { FeatureMapChart as GeoFeatures} from "../data/ChartsData";
 
-function WorldMapChart() {
+function WorldMapChart({inDashBoard}) {
   return (
     <ResponsiveChoropleth
     data={data}
-    features={Feature}
+    features={GeoFeatures.features}
     margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
     colors={["#ac09e7","#CB3CFF","#0E43FB", "#3100e0","#098bd0", "#57C3FF"]}
     domain={[ 0, 1000000 ]}
@@ -19,7 +19,7 @@ function WorldMapChart() {
     projectionRotation={[ 0, 0, 0 ]}
     graticuleLineWidth={0}
     graticuleLineColor="#dddddd"
-    borderWidth={0.5}
+    borderWidth={1}
     borderColor="#0b1739"
     isInteractive={true}
     defs={[
@@ -56,27 +56,7 @@ function WorldMapChart() {
             ]
         }
     ]}
-    fill={[
-        {
-            match: {
-                id: 'CAN'
-            },
-            id: 'dots'
-        },
-        {
-            match: {
-                id: 'CHN'
-            },
-            id: 'lines'
-        },
-        {
-            match: {
-                id: 'ATA'
-            },
-            id: 'gradient'
-        }
-    ]}
-    legends={[
+    legends={!inDashBoard? [
         {
             anchor: 'left',
             direction: 'column',
@@ -87,20 +67,20 @@ function WorldMapChart() {
             itemWidth: 94,
             itemHeight: 18,
             itemDirection: 'left-to-right',
-            itemTextColor: '#444444',
+            itemTextColor: '#AEB9E1',
             itemOpacity: 0.85,
             symbolSize: 18,
             effects: [
                 {
                     on: 'hover',
                     style: {
-                        itemTextColor: '#000000',
+                        itemTextColor: '#CB3CFF',
                         itemOpacity: 1
                     }
                 }
             ]
         }
-    ]}
+    ]: undefined}
 />
   );
 }
